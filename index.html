@@ -69,6 +69,7 @@ canvas {
   <div data-id="4" id="footer-text">Created by Andrew Cole</div>
 </div>
 
+<script>var vpArcadeRun=null;function vpArcadeSend(data){if(window.parent===window)return;for(var origin of ['https://venomouspress.com','https://www.venomouspress.com'])window.parent.postMessage(data,origin);}</script>
 <script>
 // ============================================================
 // FEED THE HOMELESS — Complete Arcade Lane-Crossing Game
@@ -547,6 +548,7 @@ function reachShelter() {
 
 // ---- LEVEL MANAGEMENT ----
 function startLevel(levelId) {
+  vpArcadeSend({type:'vp-arcade-start',game:'feed-the-homeless'});
   currentLevel = generateLevel(levelId);
   vehicles = []; powerups = []; particles = []; floatingTexts = [];
   cementPuddles = []; spawnTimers = []; raindrops = [];
